@@ -1,0 +1,26 @@
+<h1>Ulogujte se</h1>
+
+<form action="/login" method="POST" class="formaBaza">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required />
+    </div>
+
+    <div>
+        <label for="password">Šifra</label>
+        <input type="password" id="password" name="password" required />
+    </div>
+    <button class="butonPredaja" type="submit">Ulogujte se</button>
+</form>
+<ul class="korisnici">
+    <!-- Prolazim kroz objekte korisnika -->
+    <% for(var i = 0; i < korisnici.length; i++) {%>
+      <li class="korisnik">
+        <!-- ispisujem email korisnika -->
+        <span><%= korisnici[i].email %></span>:
+        <!-- ispisujem password korisnika sto nije pametno ali zbog testiranja rada sa bazom -->
+        <span><%= korisnici[i].password %></span>
+      </li>
+    <% } %>
+  </ul>
+<a href="/register"><button class="butonPredaja">Registrirajte se</button></a>
